@@ -1,0 +1,338 @@
+
+<h2 class="sr-only">Programme libéral pour la France — 7 piliers, horizon 2 mandats</h2>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.pg{max-width:860px;margin:0 auto;padding:2rem 1.5rem 4rem;font-family:var(--font-serif,'Georgia',serif)}
+.mast{border-bottom:2px solid var(--color-text-primary);padding-bottom:1.25rem;margin-bottom:2rem}
+.mast-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.5rem}
+.lbl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-text-tertiary)}
+.title{font-size:2.4rem;line-height:1.1;color:var(--color-text-primary);font-weight:500;margin-bottom:.5rem;font-family:var(--font-serif)}
+.sub{font-size:1rem;color:var(--color-text-secondary);line-height:1.5;font-style:italic}
+.doctrine{background:var(--color-background-secondary);border-left:3px solid var(--color-text-primary);padding:1rem 1.25rem;margin-bottom:2.5rem}
+.doctrine p{font-size:.95rem;color:var(--color-text-primary);line-height:1.7;font-style:italic;font-family:var(--font-serif)}
+.section{border-top:1px solid var(--color-border-tertiary);padding-top:1.5rem;margin-bottom:2.5rem}
+.sec-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.25rem;gap:1rem}
+.sec-num{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--color-text-tertiary);margin-bottom:.25rem}
+.sec-title{font-size:1.2rem;color:var(--color-text-primary);font-weight:500;font-family:var(--font-serif)}
+.badge{flex-shrink:0;padding:.25rem .7rem;font-size:11px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;border-radius:2px}
+.b-now{background:#EAF3DE;color:#27500A}
+.b-mid{background:#FAEEDA;color:#633806}
+.b-end{background:#E6F1FB;color:#0C447C}
+.b-perm{background:var(--color-background-secondary);color:var(--color-text-secondary);border:0.5px solid var(--color-border-secondary)}
+.three-col{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-bottom:1.25rem}
+.two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;margin-bottom:1.25rem}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.1rem}
+.card-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-tertiary);margin-bottom:.4rem}
+.card-val{font-size:1.35rem;color:var(--color-text-primary);line-height:1.1;font-weight:500}
+.card-sub{font-size:12px;color:var(--color-text-secondary);margin-top:.3rem;font-style:italic}
+.mlist{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.mlist li{font-size:.875rem;color:var(--color-text-secondary);padding-left:1.25rem;position:relative;line-height:1.5}
+.mlist li::before{content:'→';position:absolute;left:0;color:var(--color-text-tertiary);font-size:.8rem;top:.05rem}
+.mlist li.g::before{color:#3B6D11}
+.mlist li.b::before{color:#185FA5}
+.mlist li.r::before{color:#A32D2D}
+.mlist li.a::before{color:#854F0B}
+.timeline{display:flex;flex-direction:column;gap:0;margin-bottom:1.25rem}
+.tl-row{display:flex;gap:1rem;padding:.75rem 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.tl-row:last-child{border-bottom:none}
+.tl-year{flex-shrink:0;width:80px;font-size:11px;font-weight:500;color:var(--color-text-tertiary);padding-top:.15rem}
+.tl-content{flex:1;font-size:.85rem;color:var(--color-text-secondary);line-height:1.5}
+.tl-content strong{color:var(--color-text-primary);font-weight:500}
+.prec{background:var(--color-background-secondary);border:0.5px solid var(--color-border-secondary);padding:.75rem 1rem;border-radius:var(--border-radius-md);font-size:.8rem;color:var(--color-text-secondary);font-style:italic;line-height:1.6;margin-bottom:1rem}
+.prec strong{font-style:normal;font-weight:500;color:var(--color-text-primary)}
+hr.thin{border:none;border-top:1px solid var(--color-border-tertiary);margin:1.25rem 0}
+.tax-viz{margin-bottom:1.25rem}
+.tax-row{display:flex;align-items:center;gap:8px;margin-bottom:.5rem}
+.tax-label{font-size:12px;color:var(--color-text-secondary);width:130px;flex-shrink:0}
+.tax-track{flex:1;height:10px;background:var(--color-background-secondary);border-radius:4px;overflow:hidden;border:0.5px solid var(--color-border-tertiary)}
+.tax-fill{height:100%;border-radius:4px}
+.tax-val{font-size:12px;font-weight:500;color:var(--color-text-primary);width:50px;text-align:right;flex-shrink:0}
+.compare-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:1.25rem}
+.cmp-card{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:.75rem;text-align:center}
+.cmp-who{font-size:11px;color:var(--color-text-tertiary);margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.06em}
+.cmp-rate{font-size:1.6rem;font-weight:500;color:var(--color-text-primary);line-height:1}
+.cmp-name{font-size:11px;color:var(--color-text-secondary);margin-top:.25rem}
+.cmp-card.target{border-color:#3B6D11;border-width:1px}
+.cmp-card.target .cmp-rate{color:#3B6D11}
+.chain{display:flex;flex-direction:column;gap:0;margin-bottom:1.25rem}
+.chain-step{display:flex;gap:1rem;align-items:flex-start;padding:.75rem 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.chain-step:last-child{border-bottom:none}
+.chain-num{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--color-background-secondary);border:0.5px solid var(--color-border-secondary);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:var(--color-text-secondary)}
+.chain-text{flex:1;font-size:.85rem;color:var(--color-text-secondary);line-height:1.5;padding-top:.3rem}
+.chain-text strong{color:var(--color-text-primary);font-weight:500}
+.regal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:1.25rem}
+.regal-card{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:.85rem;display:flex;flex-direction:column;gap:.4rem}
+.regal-name{font-size:.85rem;font-weight:500;color:var(--color-text-primary)}
+.regal-desc{font-size:.75rem;color:var(--color-text-secondary);line-height:1.4}
+.index-wrap{background:var(--color-background-secondary);border:1px solid var(--color-border-secondary);padding:1.5rem;border-radius:var(--border-radius-lg);display:flex;align-items:center;gap:2rem;margin-top:1rem}
+.index-score{font-size:3rem;color:#3B6D11;line-height:1;flex-shrink:0;font-weight:500;font-family:var(--font-serif)}
+.index-text h3{font-size:1rem;color:var(--color-text-primary);margin-bottom:.4rem;font-weight:500}
+.index-text p{font-size:.8rem;color:var(--color-text-secondary);line-height:1.5}
+.footnote{font-size:11px;color:var(--color-text-tertiary);font-style:italic;margin-top:2rem;border-top:1px solid var(--color-border-tertiary);padding-top:1rem;line-height:1.6}
+@media(max-width:580px){.three-col,.two-col,.compare-grid,.regal-grid{grid-template-columns:1fr}.title{font-size:1.8rem}.index-wrap{flex-direction:column;gap:1rem}}
+</style>
+
+<div class="pg">
+
+<div class="mast">
+  <div class="mast-top">
+    <span class="lbl">Victor Ferry Business & News — Programme politique</span>
+    <span class="lbl">Horizon 2 mandats — 2027–2037</span>
+  </div>
+  <div class="title">Un programme libéral pour la France</div>
+  <p class="sub">Sept piliers pour sortir de l'État-providence, restaurer la souveraineté individuelle et faire de la France une zone d'attractivité mondiale.</p>
+</div>
+
+<div class="doctrine">
+  <p>La France n'a pas un problème de sous-financement public. Elle a un problème de surfinancement improductif. L'État consomme 57 % de la richesse nationale pour produire des services inférieurs à ce que le marché libre produirait à 10 % du coût. Le programme ne supprime pas les services — il change qui les fournit, comment, et à quel prix pour le contribuable.</p>
+</div>
+
+<div class="section">
+  <div class="sec-header">
+    <div>
+      <div class="sec-num">Pilier 01</div>
+      <div class="sec-title">Flat tax à 10 % — l'objectif de fin de transition</div>
+    </div>
+    <div class="badge b-end">Horizon mandat 2</div>
+  </div>
+  <div class="compare-grid">
+    <div class="cmp-card">
+      <div class="cmp-who">France aujourd'hui</div>
+      <div class="cmp-rate">43,6 %</div>
+      <div class="cmp-name">prélèvements obligatoires / PIB</div>
+    </div>
+    <div class="cmp-card">
+      <div class="cmp-who">Irlande (modèle)</div>
+      <div class="cmp-rate">12,5 %</div>
+      <div class="cmp-name">IS — hub européen en 20 ans</div>
+    </div>
+    <div class="cmp-card target">
+      <div class="cmp-who">Objectif France 2037</div>
+      <div class="cmp-rate">10 %</div>
+      <div class="cmp-name">flat tax universelle — tout revenu</div>
+    </div>
+  </div>
+  <div class="tax-viz">
+    <div class="tax-row"><div class="tax-label">France 2027</div><div class="tax-track"><div class="tax-fill" style="width:100%;background:#E24B4A"></div></div><div class="tax-val">43,6 %</div></div>
+    <div class="tax-row"><div class="tax-label">Mandat 1 — an 3</div><div class="tax-track"><div class="tax-fill" style="width:70%;background:#EF9F27"></div></div><div class="tax-val">~30 %</div></div>
+    <div class="tax-row"><div class="tax-label">Mandat 2 — an 5</div><div class="tax-track"><div class="tax-fill" style="width:23%;background:#639922"></div></div><div class="tax-val">10 %</div></div>
+  </div>
+  <ul class="mlist">
+    <li class="g">Flat tax unique sur tous les revenus — salaires, capital, dividendes, successions — sans exception ni niche</li>
+    <li class="g">Suppression ISF, taxe foncière, CVAE, C3S, droits de douane internes à l'UE</li>
+    <li class="b">La France à 10 % flat devient la première destination mondiale d'entrepreneurs et de capitaux — effet Irlande à l'échelle continentale</li>
+    <li class="b">Les 10 % de ménages qui paient 75 % de l'IR n'ont plus de raison de s'expatrier — base fiscale élargie massivement</li>
+    <li>Ce que la gauche appelle "aides aux entreprises" (75 Md€ d'exonérations de cotisations) est une correction partielle de l'enfer fiscal — la flat tax supprime le problème à la racine</li>
+  </ul>
+</div>
+
+<div class="section">
+  <div class="sec-header">
+    <div>
+      <div class="sec-num">Pilier 02</div>
+      <div class="sec-title">Démantèlement de l'État-providence — substitution, pas suppression</div>
+    </div>
+    <div class="badge b-now">Mandat 1</div>
+  </div>
+  <div class="prec"><strong>Le principe :</strong> l'État arrête de monopoliser la santé, l'éducation et la solidarité. Tout prestataire privé opérant dans ces domaines paie 0 % d'impôt. Ceux qui "ont le cœur sur la main" peuvent le prouver — sans que l'État leur confisque d'abord la moitié de leurs revenus.</div>
+  <div class="timeline">
+    <div class="tl-row"><div class="tl-year">An 1</div><div class="tl-content"><strong>Suppression des agences d'État</strong> — 1 200+ agences, ~60 Md€/an. Dissolution par décret. Missions régaliennes absorbées par les ministères, le reste supprimé.</div></div>
+    <div class="tl-row"><div class="tl-year">An 1–2</div><div class="tl-content"><strong>Suppression URSSAF et cotisations sociales</strong> — remplacées par la flat tax. 13 000 agents reversés sur le marché du travail productif.</div></div>
+    <div class="tl-row"><div class="tl-year">An 2</div><div class="tl-content"><strong>Suppression CAF et RSA</strong> — remplacés par taux zéro pour toute association caritative et mutuelle privée. La solidarité redevient volontaire — sans bureaucratie qui consomme 35 % du montant avant redistribution.</div></div>
+    <div class="tl-row"><div class="tl-year">An 2–4</div><div class="tl-content"><strong>Suppression des strates administratives</strong> — régions et départements fusionnés en une seule strate de proximité. Économie estimée : 30–40 Md€/an.</div></div>
+    <div class="tl-row"><div class="tl-year">An 3–5</div><div class="tl-content"><strong>Libéralisation santé et éducation</strong> — monopole Sécu et Éducation nationale levé. Taux zéro pour tout prestataire privé agréé. SMIC indicatif, contrats libres.</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-header">
+    <div>
+      <div class="sec-num">Pilier 03</div>
+      <div class="sec-title">Retraites — transition vers la capitalisation</div>
+    </div>
+    <div class="badge b-mid">Mandat 1–2</div>
+  </div>
+  <div class="two-col">
+    <div>
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-tertiary);margin-bottom:.75rem">La mécanique de transition</p>
+      <ul class="mlist">
+        <li class="g">Retraités actuels : pensions maintenues, financées par cession d'actifs publics (patrimoine d'État estimé à 900–1 200 Md€)</li>
+        <li class="g">Actifs : cotisation répartition baisse progressivement — la différence est libre d'investissement en capitalisation à 0 %</li>
+        <li class="g">Nouveaux entrants : capitalisation pure, zéro cotisation répartition</li>
+        <li class="b">Suppression des caisses de retraite et de leurs 80 000 agents — économie de gestion immédiate</li>
+      </ul>
+    </div>
+    <div>
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-tertiary);margin-bottom:.75rem">Financement du trou de transition</p>
+      <ul class="mlist">
+        <li>Cession d'actifs immobiliers de l'État — estimés à 300–400 Md€</li>
+        <li>Cession des participations publiques (EDF, Orange, Engie, ADP...)</li>
+        <li>Forêts domaniales, infrastructures, domaine maritime</li>
+        <li class="r">Précédent : Chili 1981 — transition en 10 ans, rendement moyen des fonds : 8–10 %/an sur 30 ans</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-header">
+    <div>
+      <div class="sec-num">Pilier 04</div>
+      <div class="sec-title">Laïcité radicale, immigration et ordre public</div>
+    </div>
+    <div class="badge b-now">Mandat 1 — priorité</div>
+  </div>
+
+  <div class="prec"><strong>Constat factuel, pas principe général :</strong> la quasi-totalité des attentats commis en France depuis 2012 sont d'inspiration islamiste. Les données sociologiques documentent une résistance à l'assimilation sur 3 générations et des valeurs structurellement incompatibles avec la modernité libérale chez une fraction non marginale de la population musulmane. Il n'y a pas de symétrie entre les religions sur ce point — la politique de sécurité s'adapte à la menace réelle.</div>
+
+  <div class="two-col">
+    <div>
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-tertiary);margin-bottom:.75rem">Laïcité — ce que l'État cesse de faire</p>
+      <ul class="mlist">
+        <li class="r">Zéro menu halal en cantine publique, zéro abattage rituel dans les abattoirs subventionnés</li>
+        <li class="r">Zéro aumônerie financée par l'État — prisons, armée, hôpitaux</li>
+        <li class="r">Zéro financement public d'associations à objet cultuel</li>
+        <li class="r">Fermeture de toute école coranique ne soumettant pas ses élèves au programme national</li>
+        <li class="r">Expulsion de tout imam financé par un État étranger (Qatar, Arabie Saoudite, Turquie)</li>
+        <li class="r">Dissolution de toute association dont des membres sont condamnés pour terrorisme ou apologie</li>
+      </ul>
+    </div>
+    <div>
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-tertiary);margin-bottom:.75rem">Laïcité — ce que l'État impose</p>
+      <ul class="mlist">
+        <li class="b">Interdiction du voile dans tout espace financé par l'État — administrations, écoles, hôpitaux, transports publics</li>
+        <li class="b">Interdiction du voile intégral (burqa, niqab) dans l'espace public — ordre public et identification</li>
+        <li class="b">Retrait immédiat du titre de séjour ou de la nationalité pour condamnation pour terrorisme ou apologie</li>
+        <li class="b">Critères d'assimilabilité à l'entrée : primauté du droit civil, égalité homme-femme, liberté d'apostasie, rejet de la violence blasphématoire</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="thin">
+  <p style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-tertiary);margin-bottom:.75rem">Immigration — la chaîne de conséquences</p>
+  <div class="chain">
+    <div class="chain-step">
+      <div class="chain-num">1</div>
+      <div class="chain-text"><strong>Zéro aide sociale pour les non-citoyens</strong> — applicable immédiatement. Celui qui vient sans ressources et sans emploi n'a aucun filet. L'effet d'appel est supprimé à la racine.</div>
+    </div>
+    <div class="chain-step">
+      <div class="chain-num">2</div>
+      <div class="chain-text"><strong>Étranger sans revenus documentés après 12 mois</strong> — expulsion. Pas de procédure longue : charge de la preuve sur le résident, pas sur l'État.</div>
+    </div>
+    <div class="chain-step">
+      <div class="chain-num">3</div>
+      <div class="chain-text"><strong>Infraction grave</strong> — prison privée autofinancée (voir pilier 07), puis expulsion à la sortie pour tout non-citoyen.</div>
+    </div>
+    <div class="chain-step">
+      <div class="chain-num">4</div>
+      <div class="chain-text"><strong>Bilan à mi-mandat</strong> — évaluation des résultats sur flux entrants, taux d'emploi des résidents étrangers, coût net résiduel. Ajustement des critères d'entrée en fonction des données réelles.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-header">
+    <div>
+      <div class="sec-num">Pilier 05</div>
+      <div class="sec-title">Propriété privée — le droit de la défendre</div>
+    </div>
+    <div class="badge b-now">Mandat 1</div>
+  </div>
+  <div class="two-col">
+    <div>
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-tertiary);margin-bottom:.75rem">Droit de port d'armes — périmètre exact</p>
+      <ul class="mlist">
+        <li class="g">Droit attaché à la propriété, pas à la personne — tout propriétaire peut détenir une arme à feu à son domicile sans justification autre que la propriété du lieu</li>
+        <li class="g">L'arme reste dans le périmètre de la propriété — domicile, terrain, local commercial</li>
+        <li class="r">Hors de ce périmètre : port d'arme = infraction grave, arrestation immédiate</li>
+        <li class="b">Cohérence verticale : l'individu défend sa propriété, l'État défend le territoire — même logique, échelles différentes</li>
+      </ul>
+    </div>
+    <div>
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-tertiary);margin-bottom:.75rem">Présomption de légitime défense</p>
+      <ul class="mlist">
+        <li class="g">Toute intrusion non autorisée dans une propriété habitée présume la menace — charge de la preuve sur l'accusation, pas sur le propriétaire</li>
+        <li class="g">Le squatteur assume le risque physique de son acte — meilleur dissuasif possible, coût zéro pour l'État</li>
+        <li class="r">Fin de la jurisprudence qui retourne le droit contre le propriétaire agressé</li>
+        <li class="b">Précédent : Castle Doctrine (30 États américains) — effet dissuasif documenté sur les intrusions avec occupant</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-header">
+    <div>
+      <div class="sec-num">Pilier 06</div>
+      <div class="sec-title">L'État régalien minimal — son périmètre exact</div>
+    </div>
+    <div class="badge b-perm">Permanent</div>
+  </div>
+  <div class="regal-grid">
+    <div class="regal-card">
+      <i class="ti ti-shield" aria-hidden="true" style="font-size:20px;color:var(--color-text-tertiary)"></i>
+      <div class="regal-name">Défense du territoire</div>
+      <div class="regal-desc">Armée professionnelle, dissuasion nucléaire maintenue, frontières contrôlées. Seul monopole légitime de l'État.</div>
+    </div>
+    <div class="regal-card">
+      <i class="ti ti-scale" aria-hidden="true" style="font-size:20px;color:var(--color-text-tertiary)"></i>
+      <div class="regal-name">Justice</div>
+      <div class="regal-desc">Application de la loi civile commune. Aucun droit parallèle reconnu — ni coutumier, ni religieux, ni communautaire.</div>
+    </div>
+    <div class="regal-card">
+      <i class="ti ti-building" aria-hidden="true" style="font-size:20px;color:var(--color-text-tertiary)"></i>
+      <div class="regal-name">Police</div>
+      <div class="regal-desc">Protection des biens et des personnes. Présomption de bonne foi pour les forces de l'ordre. Fin de la doctrine du "pas de vagues".</div>
+    </div>
+  </div>
+  <ul class="mlist">
+    <li>Tout ce qui est hors de ce périmètre est candidat à la libéralisation progressive</li>
+    <li class="r">L'État ne subventionne aucune entreprise, aucun secteur, aucune religion, aucune communauté</li>
+    <li class="b">Les infrastructures sont privatisées ou concédées — financement par péage plutôt que par impôt général</li>
+  </ul>
+</div>
+
+<div class="section">
+  <div class="sec-header">
+    <div>
+      <div class="sec-num">Pilier 07</div>
+      <div class="sec-title">Prisons privées — le crime se finance lui-même</div>
+    </div>
+    <div class="badge b-now">Mandat 1</div>
+  </div>
+
+  <div class="prec"><strong>Le principe :</strong> la prison est une fonction régalienne dans son objet — priver de liberté — mais pas nécessairement dans son exécution. Taux zéro pour tout opérateur privé certifié. Le détenu travaille, participe au financement de son incarcération, et sort avec un pécule minimal. La récidive coûte plus cher que la réinsertion — le modèle privatisé a intérêt à les deux.</div>
+
+  <div class="two-col">
+    <div>
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-tertiary);margin-bottom:.75rem">Le modèle économique</p>
+      <ul class="mlist">
+        <li class="g">Taux zéro d'impôt pour tout opérateur privé de prison certifié par l'État</li>
+        <li class="g">Le détenu travaille — une part couvre ses frais d'incarcération, une part est mise de côté pour sa sortie</li>
+        <li class="g">Il sort avec une ardoise partielle et un pécule minimal — pas avec une dette insurmontable qui garantit la récidive</li>
+        <li class="b">Coût actuel par détenu en France : 120–150 €/jour — le privé fait 20–30 % moins cher sur les fonctions non-régaliennes</li>
+      </ul>
+    </div>
+    <div>
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-tertiary);margin-bottom:.75rem">Articulation avec l'immigration</p>
+      <ul class="mlist">
+        <li class="a">Tout étranger non citoyen condamné pour infraction grave — prison privée, puis expulsion automatique à la sortie</li>
+        <li class="a">Zéro possibilité de régularisation par le séjour carcéral — la prison n'ouvre pas de droit au territoire</li>
+        <li class="r">Fin des "sorties sèches" sans contrôle — coordination automatique entre sortie de prison et statut migratoire</li>
+        <li class="b">L'État certifie, inspecte et fixe les standards minimaux — il ne gère pas</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="index-wrap">
+  <div class="index-score">9,1/10</div>
+  <div class="index-text">
+    <h3>Indice de liberté projeté — France 2037 après 2 mandats</h3>
+    <p>Score composite sur les 7 dimensions de l'Indice Léviathan. Référence France 2026 : 5,8/10. Le précédent le plus proche : l'Irlande de 1987–2000, qui a transformé un pays en faillite en hub européen en 13 ans par une politique de désengagement massif de l'État.</p>
+  </div>
+</div>
+
+<p class="footnote">Programme éditorial fondé sur des principes libéraux cohérents — il ne représente pas la position d'un parti existant. Sources : Institut Cato, Heritage Foundation Index of Economic Freedom, OCDE, Institut Montaigne. Données démographiques et culturelles : Ferghane Azihari, <em>L'Islam contre la modernité</em> (La Cité, 2025) ; Pew Research Center ; IFOP sondages valeurs 2022–2025. Commission sénatoriale aides aux entreprises (2025), IGF (2024).</p>
+
+</div>
